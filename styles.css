@@ -1,0 +1,334 @@
+body {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-family: "Grenze", serif;
+}
+#board {
+    display: flex;
+    border: #f0571a 1px solid;
+}
+.slot {
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hole {
+    width: 60px;
+    height: 60px;
+    background-color: none;
+    border-radius: 50px;
+    border: #520e0b 1px solid;
+    filter: brightness(150%);
+    margin: 0px;
+}
+
+.player1 .hole {
+    background-color: none;
+    background-size: cover;
+}
+.player2 .hole {
+    background-color: none;
+    background-size: cover;
+}
+
+#victory {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    width: 100vh;
+    max-width: 100%;
+    padding: 20px;
+    z-index: 1000;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 70px;
+    text-transform: uppercase;
+    margin: 0px;
+    color: #c3a343;
+    filter: brightness(100%);
+}
+
+#victory.on {
+    visibility: visible;
+}
+#cool {
+    color: #c3a343;
+    padding-top: 20px;
+    font-size: 40px;
+    text-decoration: none;
+}
+
+#cool:hover {
+    filter: brightness(200%);
+}
+
+#darken {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 900;
+    visibility: hidden;
+}
+
+#darken.on {
+    visibility: visible;
+}
+
+/* the container for the title stuff */
+.wrapper {
+    top: 20px;
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+}
+/* white on black */
+.txt {
+    color: #ffffff;
+    background: #000000;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.neonWrapper {
+    display: inline-flex;
+    filter: brightness(200%);
+    overflow: hidden;
+}
+/* text next to text, absolute puts it on top of each other, they blend and leave a little line, put blur on it, makes the line more visible */
+.txt::before {
+    content: "DROP IT LIKE IT'S HOT";
+    position: absolute;
+    mix-blend-mode: difference;
+    filter: blur(3px);
+}
+/* from gradpad, its first on top but then you blend together with texts */
+.gradient {
+    background: linear-gradient(
+        111.95647678511193deg,
+        rgba(152, 39, 9, 1) 50.53710937500001%,
+        rgba(0, 2, 0, 1) 96.67968749999999%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 200px;
+    mix-blend-mode: multiply;
+}
+/* the black surface with white circle */
+.dodge {
+    background: radial-gradient(circle, white, black 35%) center / 25% 25%;
+    position: absolute;
+    top: -300%;
+    left: -50%;
+    width: 800px;
+    height: 500px;
+    mix-blend-mode: color-dodge;
+    animation: dodge-area 3s linear infinite;
+}
+@keyframes dodge-area {
+    100% {
+        transform: translate(25%, 25%);
+    }
+}
+.chooseFirst {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-width: 100%;
+    padding: 20px;
+    z-index: 1000;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.chooseFirst.on {
+    visibility: visible;
+}
+img {
+    width: 100px;
+    height: 100px;
+    margin: 20px;
+}
+img:hover {
+    border: 2px solid yellow;
+}
+.chooseSecond {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-width: 100%;
+    padding: 20px;
+    z-index: 1000;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.disclaimerBtn {
+    position: fixed;
+    top: 20px;
+    right: 150px;
+}
+.disclaimer.on {
+    visibility: visible;
+}
+.disclaimer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-width: 100%;
+    padding: 20px;
+    z-index: 1000;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.disclaimerTxt p {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.chooseSecond.on {
+    visibility: visible;
+}
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.changePlayer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+button {
+    border-radius: 15px;
+    background-color: #8f4106;
+    color: black;
+    font-family: "Grenze", serif;
+    border: 0px;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.chooseSecond p {
+    color: #8f4106;
+}
+.killText {
+    font-size: 20px;
+    color: darkred;
+}
+.containerGold {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    visibility: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+.fall {
+    position: relative;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    filter: brightness(150%);
+    visibility: hidden;
+    opacity: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(242, 215, 12, 1) 0%,
+        rgba(255, 255, 255, 1) 56%,
+        rgba(252, 235, 0, 1) 96%
+    );
+}
+.fall.go {
+    visibility: visible;
+    animation: fall 3s linear infinite;
+    transform: translateY(-100%);
+}
+.one {
+    width: 30px;
+    height: 30px;
+}
+.two {
+    width: 20px;
+    height: 20px;
+    margin-left: 50px;
+}
+.three {
+    width: 80px;
+    height: 80px;
+}
+
+.five {
+    width: 45px;
+    height: 45px;
+}
+.seven {
+    width: 39px;
+    height: 39px;
+}
+.ten {
+    width: 50px;
+    height: 50px;
+}
+@keyframes fall {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(500px;);
+    }
+    100% {
+        transform: translateY(1000px);
+        opacity: 1;
+    }
+}
