@@ -1,5 +1,7 @@
 # connect-4-snoop
 
+[![Image from Gyazo](https://i.gyazo.com/32a46125632ae502bd9010b1f7f8bc3a.gif)](https://gyazo.com/32a46125632ae502bd9010b1f7f8bc3a)
+
 [**CHECK OUT WHAT IT LOOKS LIKE LIVE!**](https://marijanamust.github.io/connect-4-snoop/)
 
 This was the first version of my project in the web development bootcamp, after only two weeks.
